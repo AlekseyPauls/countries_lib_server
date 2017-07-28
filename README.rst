@@ -6,19 +6,18 @@ countries_lib_server - нормализация названия страны
 Описание
 --------
 
-Данный проект предоставляет собой Docker контейнер веб-сервиса, предназначенного для нормализации (нахождения корректного) 
+Данный проект представляет собой Docker контейнер веб-сервиса, предназначенного для нормализации (нахождения корректного) 
 названия страны.
 
 ---------
 Установка
 --------- 
 
-Docker Image расположен по адресу https://hub.docker.com/r/alekseypauls/countries_lib_server/. Чтобы установить контейнер, нужно выполнить команду 
+Docker Image расположен по адресу https://hub.docker.com/r/alekseypauls/countries_lib_server/
 
-docker pull alekseypauls/countries_lib_server
+Команда запуска (первый порт можно изменить): docker run -p 8888:5000 alekseypauls/countries_lib_server
 
-собрать и запустить образ: ...
-
+Загрузка образа: docker pull alekseypauls/countries_lib_server
 
 ----------------------
 Поддерживаемые запросы
@@ -72,4 +71,12 @@ docker pull alekseypauls/countries_lib_server
 ----------
 Применение
 ----------
+
+Чтобы получить доступ к функционалу сервера необходимо:
+
+#. Установить пакет-клиент - https://github.com/AlekseyPauls/countries_lib_client
+
+#. Запустить docker-контейнер
+
+#. Импортировать библиотеку **countries_lib_client** (from countries_lib_client.country_client import normalize_country_name, match_country_name, del_country_name) и использовать адрес запущенного сервера как аргумент **url** в вышеприведенных функциях.
 
